@@ -1,0 +1,52 @@
+<view wx:if="{{!isLoad}}" class="margin-top load loading text-l load-project"></view>
+<block wx:if="{{isLoad}}">
+	<cmpt-comm-list _params="{{_params}}" type="info-list" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="info/my_list" pulldownType="{{['modal','modal']}}" isTotalMenu="{{true}}" sortMenusDefaultIndex="0" topBottom="120" placeholder="搜索" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd">
+
+		</view>
+
+		<!-- List Begin -->
+		<view class="text-pic-list-box padding-project">
+
+			<view class="item card-project shadow-project" wx:for="{{dataList.list}}" wx:key="index">
+
+				<view class="desc">
+					<view class="left"><text class="icon-writefill text-project"></text></view>
+					<view class="right content-cut-two">{{item.INFO_OBJ.title}}</view>
+				</view> 
+
+				<view class="line1">
+					<view class="tt"><text class="icon-title text-gray margin-right-xxs "></text>分类：{{item.INFO_CATE_NAME}}</view>
+					<view class="tt"><text class="icon-title text-gray margin-right-xxs"></text>时间：{{item.INFO_ADD_TIME}}</view> 
+				</view> 
+
+				<view class="data data-button">
+					<button bindtap="url" data-url="../edit/info_edit?id={{item._id}}" class="btn mid bg-gray text-black"><text class="icon-edit margin-right-xxs text-green"></text>修改</button>
+
+					<button bindtap="bindDelTap" data-id="{{item._id}}" class="btn mid bg-gray text-black"><text class="icon-delete margin-right-xxs text-red"></text>删除</button>
+
+					<button bind:tap="url" data-url="../detail/info_detail?id={{item._id}}" class="btn mid bg-brown light"><text class="icon-attention margin-right-xxs"></text>预览</button>
+
+				</view>
+
+			</view>
+
+			<!--load begin-->
+			<import src="../../../../../tpls/public/list_load_tpl.wxml" />
+			<template is="listLoadTpl" data="{{skin:'load-project',dataList}}" />
+			<!--load end-->
+
+		</view>
+		<!-- List END -->
+
+	</cmpt-comm-list>
+
+	<!--  button Begin -->
+	<!--  button END -->
+
+	<view class="post safe-bottom">
+		<button capture-bind:tap="url" data-url="../add/info_add" class="btn-base btn-project shadow"><text class="icon-post margin-right-xs"></text>写游记</button>
+	</view>
+
+</block>

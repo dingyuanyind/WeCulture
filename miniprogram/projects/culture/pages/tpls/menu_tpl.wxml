@@ -1,0 +1,36 @@
+<template name="menuTpl">
+	<view class="tab-bar">
+		<view wx:if="{{returnHome}}" class="tab-bar-home" bindtap="url" data-type="relaunch" data-url="/pages/home/index/home_index">
+			<text class="tab-bar-home-text icon-homefill text-grey"></text>
+		</view>
+
+		<view class="tab-bar-border"></view>
+		<view class="tab-bar-item" bindtap="url" data-type="relaunch" data-url="/projects/culture/pages/default/index/default_index">
+			<image class="tab-icon" src="/projects/culture/images/tabbar/home{{curMenu=='home_index'?'_cur':''}}.png"></image>
+			<view class="tab-text {{curMenu=='home_index'?'menu-project':''}}">首页</view>
+		</view>
+
+		<view class="tab-bar-item" bindtap="url" data-type="relaunch" data-url="/projects/culture/pages/product/index/product_index">
+			<image class="tab-icon" src="/projects/culture/images/tabbar/product{{curMenu=='product_index'?'_cur':''}}.png"></image>
+			<view class="tab-text {{curMenu=='product_index'?'menu-project':''}}">攻略</view>
+		</view>
+
+		<view wx:if="{{skin.cate2!==false}}" class="tab-bar-item" bindtap="url" data-type="relaunch" data-url="/projects/culture/pages/activity/index/activity_index">
+			<image class="tab-icon" src="/projects/culture/images/tabbar/activity{{curMenu=='activity_index'?'_cur':''}}.png"></image>
+			<view class="tab-text {{curMenu=='activity_index'?'menu-project':''}}">活动</view>
+		</view>
+
+		<view class="tab-bar-item" bindtap="url" data-type="relaunch" data-url="/projects/culture/pages/info/index/info_index">
+			<image class="tab-icon" src="/projects/culture/images/tabbar/info{{curMenu=='info_index'?'_cur':''}}.png"></image>
+			<view class="tab-text {{curMenu=='info_index'?'menu-project':''}}">游记</view>
+		</view>
+
+
+		<view class="tab-bar-item" bindtap="url" data-type="relaunch" data-url="/projects/culture/pages/my/index/my_index">
+			<image class="tab-icon" src="/projects/culture/images/tabbar/my{{curMenu=='my_index'?'_cur':''}}.png"></image>
+			<view class="tab-text {{curMenu=='my_index'?'menu-project':''}}">我的</view>
+		</view>
+
+
+	</view>
+</template>

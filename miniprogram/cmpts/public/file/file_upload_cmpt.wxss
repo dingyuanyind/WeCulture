@@ -1,0 +1,68 @@
+@import "../../../style/base/comm.wxss";
+@import "../../../style/public/project.wxss";
+
+.upload-img {
+	width: 100%; 
+	padding:0 0rpx;
+}
+
+.upload-img .inner {
+	width: 100%;
+	font-size: 28rpx;
+	color: var(--blue);
+	background-color: #f8f8f8; 
+	font-weight: bold;
+	padding: 30rpx 30rpx;
+}
+
+.file-box {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 10rpx 10rpx;
+}
+
+.file-box .item {
+	width: 100%;
+	display: flex;
+	padding: 14rpx 4rpx;
+	border-bottom: 2rpx dashed #ccc;
+}
+
+
+.file-box .item .left {
+	flex: 1;
+	font-size: 24rpx;
+	color: #888;
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+}
+
+.file-box .item .left .img {
+	width: 30rpx;
+	height: 30rpx;
+	margin-right: 10rpx;
+}
+
+.file-box .item .left .title {
+	flex: 1;
+	word-wrap: break-word;
+	word-break: break-all;
+	white-space: pre-line;
+}
+
+.file-box .item .right {
+	display: flex;
+	margin-left: 20rpx;
+}
+
+.file-box .item .right .oprt {
+	padding: 4rpx 4rpx;
+}
+
+.file-box .item .right .oprt .oprt-btn {
+	padding: 6rpx;
+	font-size: 24rpx;
+	border-radius: 20%;
+}

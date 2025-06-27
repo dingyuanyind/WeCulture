@@ -1,0 +1,148 @@
+<view class="main">
+	<view class="up">
+		<image mode="widthFix" src="../../../images/home.jpg" />
+	</view>
+
+	<view class="menu">
+
+		<view class="inner ">
+
+			<view class="mm">
+				<view bindtap="url" wx:for="{{cateList}}" wx:key="key" data-url="../../news/index/news_index?id={{item.id}}" class="item">
+					<view class="item-inner">
+						<view class="img shadow-project">
+							<image src="../../../images/menu/p{{item.id}}.png" />
+						</view>
+						<view class="title">{{item.title}}</view>
+					</view>
+				</view>
+
+				<view bindtap="url" data-type="relaunch" data-url="../../product/index/product_index" class="item">
+					<view class="item-inner">
+						<view class="img shadow-project">
+							<image src="../../../images/menu/p4.png" />
+						</view>
+						<view class="title">旅行攻略</view>
+					</view>
+				</view>
+				<view bindtap="url" data-type="relaunch" data-url="../../info/index/info_index" class="item">
+					<view class="item-inner">
+						<view class="img shadow-project">
+							<image src="../../../images/menu/p5.png" />
+						</view>
+						<view class="title">游记</view>
+					</view>
+				</view>
+
+				<view bindtap="url" data-url="../../activity/calendar/activity_calendar" class="item">
+					<view class="item-inner">
+						<view class="img shadow-project">
+							<image src="../../../images/menu/p3.png" />
+						</view>
+						<view class="title">活动日历</view>
+					</view>
+				</view>
+			</view>
+
+
+		</view>
+	</view>
+
+	<!-- 旅行攻略 begin -->
+	<view class="area">
+		<view class="hot-line" bindtap="url" data-url="../../product/index/product_index">
+			<view class="left">旅行攻略</view>
+			<view class="right">更多»</view>
+		</view>
+
+		<view wx:if="{{!productList}}" class="margin-top load loading text-l load-project"></view>
+
+
+	</view>
+
+	<view class="scroll-x">
+		<scroll-view class="scroll-view" scroll-x="true">
+			<view class="product">
+				<!-- 这里放置你的横向滚动内容 -->
+				<view class="scroll-item" wx:for="{{productList}}" wx:key="index" bind:tap="url" data-url="../../product/detail/product_detail?id={{item._id}}">
+					<image src="{{item.PRODUCT_OBJ.cover[0]}}" lazy-load="true" class="loading" mode="aspectFill" />
+					<text class="title text-cut">{{item.PRODUCT_TITLE}}</text>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+	<!-- 旅行攻略 END -->
+
+	<!-- 活动推荐 begin -->
+	<view class="area">
+		<view class="hot-line" bindtap="url" data-url="../../activity/index/activity_index">
+			<view class="left">活动推荐</view>
+			<view class="right">更多»</view>
+		</view>
+		<view wx:if="{{!activityList}}" class="margin-top load loading text-l load-project"></view>
+
+	</view>
+
+	<view class="scroll-x">
+		<scroll-view class="scroll-view" scroll-x="true">
+			<view class="activity">
+				<!-- 这里放置你的横向滚动内容 -->
+				<view class="scroll-item" wx:for="{{activityList}}" wx:key="index" bind:tap="url" data-url="../../activity/detail/activity_detail?id={{item._id}}">
+					<image src="{{item.ACTIVITY_OBJ.cover[0]}}" class="loading" lazy-load="true" mode="aspectFill" />
+					<text class="title text-cut">{{item.ACTIVITY_TITLE}}</text>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+	<!-- 活动推荐 END -->
+
+	<!--游记begin-->
+	<view class="area">
+		<view class="hot-line" bindtap="url" data-url="../../meet/index/meet_index?id=1">
+			<view class="left">热门游记</view>
+			<view class="right">更多»</view>
+		</view>
+		<view wx:if="{{!infoList}}" class="margin-top load loading text-l load-project"></view>
+
+	</view>
+	<view class="content-list">
+		<view class="content-left">
+			<block wx:for="{{infoList}}" wx:key="list">
+				<template is='item-data' data='{{...item}}' wx:if="{{index % 2 ==0}}"></template>
+			</block>
+		</view>
+		<view class="content-right">
+			<block wx:for="{{infoList}}" wx:key="list">
+				<template is='item-data' data='{{...item}}' wx:if="{{index % 2 ==1}}"></template>
+			</block>
+		</view>
+	</view>
+
+	<!-- 定义模板 -->
+	<template name="item-data">
+		<view class="content-item shadow-project" bind:tap="url" data-url="../../info/detail/info_detail?id={{_id}}">
+
+			<!-- 重点是mode为widthFix -->
+			<view class="content-item-img">
+				<view class="mark">{{INFO_CATE_NAME}}</view>
+				<image src="{{INFO_OBJ.cover}}" class="content-item-img loading" lazy-load="{{true}}" mode="widthFix" />
+			</view>
+
+			<view class="content-item-box">
+				<view class="line1 content-cut-one">{{INFO_OBJ.title}}</view>
+				<view class="line2">
+					<image src="{{user.USER_PIC}}" mode="aspectFill" lazy-load="{{true}}" class="avatar loading" />
+					<view class="name text-cut">{{user.USER_NAME}}</view>
+				</view>
+			</view>
+		</view>
+	</template>
+	<!--游记END-->
+
+	<view style="height: 200rpx;"></view>
+</view>
+
+<block wx:if="{{skin.IS_SUB}}">
+	<import src="../../tpls/menu_tpl.wxml" />
+	<template is="menuTpl" data="{{curMenu:'home_index',returnHome:false}}" />
+</block>

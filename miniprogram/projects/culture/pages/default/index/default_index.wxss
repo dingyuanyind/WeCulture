@@ -1,0 +1,278 @@
+@import "../../../../../style/public/comm_box_list.wxss";
+@import "../../../style/skin.wxss";
+
+page {
+	background-color: var(--projectCompareColor)
+}
+
+
+.main {
+	padding: 0rpx 0rpx 100rpx;
+}
+
+.up {
+	width: 100%;
+	padding: 0 !important;
+}
+
+.up image {
+	width: 100%;
+}
+
+.menu {
+	width: 100%;
+	margin-top: -70rpx;
+	position: relative;
+	padding: 0 0rpx;
+	overflow: hidden;
+	border-top-right-radius: 30rpx;
+	border-top-left-radius: 30rpx;
+}
+
+.menu .inner {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20rpx 30rpx;
+	background-color: var(--projectCompareColor);
+	z-index: 999;
+	flex-direction: column;
+}
+
+.menu .inner .mm {
+	display: flex;
+	width: 100%;
+}
+
+.menu .inner .mm .item {
+	width: 25%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 180rpx;
+}
+
+.menu .inner .mm .item .item-inner {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.menu .inner .mm .item .item-inner .img {
+	width: 100rpx;
+	height: 100rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20%;
+	background-color: #fff;
+}
+
+.menu .inner .mm .item .item-inner .img image {
+	width: 70rpx;
+	height: 70rpx;
+}
+
+.menu .inner .mm .item .item-inner .title {
+	font-size: 26rpx;
+	color: var(--projectColor);
+	margin-top: 10rpx;
+}
+
+.down {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10rpx 0rpx;
+	z-index: 9999;
+	position: relative;
+}
+
+.loading {
+	color: var(--projectColor) !important;
+}
+
+.area {
+	width: 100%;
+	border-radius: 20rpx;
+	padding: 10rpx 0 0rpx;
+}
+
+.area .hot-line {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 0rpx 30rpx;
+	align-items: center;
+	margin-top: 10rpx;
+	border-radius: 20rpx;
+	align-items: center;
+}
+
+.area .hot-line .left {
+	font-size: 30rpx;
+	font-weight: bold;
+	color: #333;
+	margin-top: 10rpx;
+}
+
+.area .hot-line .right {
+	font-size: 24rpx;
+	color: #999;
+}
+
+.scroll-x {
+	width: 100%;
+	padding: 0 0rpx 0 30rpx;
+}
+
+.scroll-view {
+	white-space: nowrap;
+	width: 100%;
+	flex-direction: row;
+}
+
+.scroll-view .product {
+	padding: 30rpx 0;
+}
+
+.scroll-view .product .scroll-item {
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-right: 10rpx;
+}
+
+
+.scroll-view .product .scroll-item image {
+	width: 184rpx;
+	height: 190rpx;
+	margin-bottom: 10rpx;
+	border-radius: 12rpx;
+}
+
+.scroll-view .product .scroll-item .title {
+	font-size: 22rpx;
+	color: #333;
+	width: 184rpx;
+	text-align: left;
+}
+
+.scroll-view .activity {
+	padding: 30rpx 0;
+}
+
+.scroll-view .activity .scroll-item {
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin-right: 10rpx;
+	overflow: hidden;
+	border-radius: 12rpx;
+}
+
+.scroll-view .activity .scroll-item image {
+	width: 400rpx;
+	height: 190rpx;
+	border-radius: 12rpx;
+}
+
+.scroll-view .activity .scroll-item .title {
+	font-size: 22rpx;
+	width: 400rpx;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	padding: 4rpx 2rpx;
+}
+
+
+.content-list {
+	display: flex;
+	justify-content: space-between;
+	padding: 20rpx 30rpx;
+}
+
+.content-left,
+.content-right {
+	width: 49%;
+}
+
+.content-item {
+	margin: 10rpx auto 20rpx;
+	background: #fff;
+	width: 98%;
+	border-radius: 10rpx;
+	position: relative;
+	overflow: hidden;
+}
+
+.content-item-img {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.content-item-img>image {
+	width: 100%;
+	border-top-left-radius: 10rpx;
+	border-top-right-radius: 10rpx;
+}
+
+
+.content-item-img .mark {
+	position: absolute;
+	top: 10rpx;
+	right: 10rpx;
+	z-index: 9;
+	background-color: rgba(199, 135, 72, .7);
+	color: #fff;
+	font-size: 20rpx;
+	padding: 8rpx 10rpx;
+	border-radius: 100% 89% 100% 100% / 90% 99% 92% 25%;
+}
+
+.content-item-box {
+	font-size: 24rpx;
+	color: #333;
+	padding: 10rpx 10rpx 20rpx;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+
+.content-item-box .line1 {
+	font-size: 24rpx;
+	color: var(--projectColor)
+}
+
+.content-item-box .line2 {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-top: 10rpx;
+	font-size: 22rpx;
+	color: var(--projectColorLight)
+}
+
+.content-item-box .line2 .name {
+	width: 180rpx;
+	color: #999;
+}
+
+
+.content-item-box .line2 .avatar {
+	width: 40rpx;
+	height: 40rpx;
+	border-radius: 50%;
+	margin-right: 10rpx;
+}

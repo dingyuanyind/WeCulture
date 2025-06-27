@@ -1,0 +1,124 @@
+{
+	"pages": [
+		"projects/culture/pages/default/index/default_index",
+		"projects/culture/pages/about/index/about_index",
+		"projects/culture/pages/search/search",
+		"projects/culture/pages/my/index/my_index",
+		"projects/culture/pages/my/reg/my_reg",
+		"projects/culture/pages/my/edit/my_edit",
+		"projects/culture/pages/my/foot/my_foot",
+		"projects/culture/pages/my/fav/my_fav",
+		"projects/culture/pages/news/index/news_index",
+		"projects/culture/pages/news/detail/news_detail",
+		"projects/culture/pages/news/cate1/news_cate1",
+		"projects/culture/pages/news/cate2/news_cate2",
+		"projects/culture/pages/admin/news/list/admin_news_list",
+		"projects/culture/pages/admin/news/add/admin_news_add",
+		"projects/culture/pages/admin/news/edit/admin_news_edit",
+		"projects/culture/pages/admin/setup/about/admin_setup_about",
+		"projects/culture/pages/admin/setup/about_list/admin_setup_about_list",
+		"projects/culture/pages/admin/setup/qr/admin_setup_qr",
+		"projects/culture/pages/admin/index/home/admin_home",
+		"projects/culture/pages/admin/index/login/admin_login",
+		"projects/culture/pages/admin/content/admin_content",
+		"projects/culture/pages/admin/mgr/log/admin_log_list",
+		"projects/culture/pages/admin/mgr/edit/admin_mgr_edit",
+		"projects/culture/pages/admin/mgr/list/admin_mgr_list",
+		"projects/culture/pages/admin/mgr/add/admin_mgr_add",
+		"projects/culture/pages/admin/mgr/pwd/admin_mgr_pwd",
+		"projects/culture/pages/admin/user/list/admin_user_list",
+		"projects/culture/pages/admin/user/detail/admin_user_detail",
+		"projects/culture/pages/admin/user/export/admin_user_export",
+		"projects/culture/pages/activity/index/activity_index",
+		"projects/culture/pages/activity/detail/activity_detail",
+		"projects/culture/pages/activity/join/activity_join",
+		"projects/culture/pages/activity/my_join_list/activity_my_join_list",
+		"projects/culture/pages/activity/my_join_detail/activity_my_join_detail",
+		"projects/culture/pages/activity/my_join_self/activity_my_join_self",
+		"projects/culture/pages/activity/calendar/activity_calendar",
+		"projects/culture/pages/activity/join_list/activity_join_list",
+		"projects/culture/pages/admin/activity/join_list/admin_activity_join_list",
+		"projects/culture/pages/admin/activity/self/admin_activity_self",
+		"projects/culture/pages/admin/activity/export/admin_activity_export",
+		"projects/culture/pages/admin/activity/scan/admin_activity_scan",
+		"projects/culture/pages/admin/activity/list/admin_activity_list",
+		"projects/culture/pages/admin/activity/add/admin_activity_add",
+		"projects/culture/pages/admin/activity/edit/admin_activity_edit",
+		"projects/culture/pages/comment/list/comment_list",
+		"projects/culture/pages/comment/add/comment_add",
+		"projects/culture/pages/product/detail/product_detail",
+		"projects/culture/pages/product/index/product_index",
+		"projects/culture/pages/admin/product/list/admin_product_list",
+		"projects/culture/pages/admin/product/add/admin_product_add",
+		"projects/culture/pages/admin/product/edit/admin_product_edit",
+		"projects/culture/pages/product/list/product_list",
+		"projects/culture/pages/info/index/info_index",
+		"projects/culture/pages/info/my_list/info_my_list",
+		"projects/culture/pages/info/add/info_add",
+		"projects/culture/pages/info/edit/info_edit",
+		"projects/culture/pages/info/detail/info_detail",
+		"projects/culture/pages/admin/info/list/admin_info_list",
+		"cmpts/public/form/form_set/field/form_set_field",
+		"cmpts/public/form/form_show/content/form_show_content",
+		"pages/test1/test1"
+	],
+	"window": {
+		"backgroundColor": "#f1f1f1",
+		"backgroundTextStyle": "dark",
+		"navigationBarBackgroundColor": "#AD683A",
+		"navigationBarTitleText": "文旅小程序",
+		"navigationBarTextStyle": "white"
+	},
+	"tabBar": {
+		"custom": false,
+		"backgroundColor": "#FFFFFF",
+		"color": "#999999",
+		"selectedColor": "#AD683A",
+		"list": [
+			{
+				"pagePath": "projects/culture/pages/default/index/default_index",
+				"text": "首页",
+				"iconPath": "/projects/culture/images/tabbar/home.png",
+				"selectedIconPath": "/projects/culture/images/tabbar/home_cur.png"
+			},
+			{
+				"pagePath": "projects/culture/pages/product/index/product_index",
+				"text": "攻略",
+				"iconPath": "/projects/culture/images/tabbar/product.png",
+				"selectedIconPath": "/projects/culture/images/tabbar/product_cur.png"
+			},
+			{
+				"pagePath": "projects/culture/pages/activity/index/activity_index",
+				"text": "活动",
+				"iconPath": "/projects/culture/images/tabbar/activity.png",
+				"selectedIconPath": "/projects/culture/images/tabbar/activity_cur.png"
+			},
+			{
+				"pagePath": "projects/culture/pages/info/index/info_index",
+				"text": "游记",
+				"iconPath": "/projects/culture/images/tabbar/info.png",
+				"selectedIconPath": "/projects/culture/images/tabbar/info_cur.png"
+			},
+			{
+				"pagePath": "projects/culture/pages/my/index/my_index",
+				"text": "我的",
+				"iconPath": "/projects/culture/images/tabbar/my.png",
+				"selectedIconPath": "/projects/culture/images/tabbar/my_cur.png"
+			}
+		]
+	},
+	"requiredPrivateInfos": [
+		"chooseLocation"
+	],
+	"permission": {
+		"scope.userLocation": {
+			"desc": "获取你当前位置信息用于小程序位置接口的效果展示"
+		}
+	},
+	"usingComponents": {
+		"cmpt-comm-list": "/cmpts/public/list/comm_list_cmpt",
+		"cmpt-picker": "/cmpts/public/picker/picker_cmpt",
+		"cmpt-modal": "/cmpts/public/modal/modal_cmpt"
+	},
+	"sitemapLocation": "sitemap.json"
+}

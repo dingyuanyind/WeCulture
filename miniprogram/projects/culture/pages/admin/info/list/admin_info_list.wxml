@@ -1,0 +1,81 @@
+<block wx:if="{{isAdmin&&isLoad}}">
+	<cmpt-comm-list source='admin' type="admin-info-list" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="admin/info_list" sortMenusDefaultIndex="0" topBottom="50" placeholder="搜索" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd">
+
+		</view>
+		<!-- List Begin -->
+		<view class="admin-comm-list">
+			<view wx:if="{{dataList && dataList.total }}" class="load text-grey">共有{{dataList.total}}条符合条件记录</view>
+
+			<view class="item" wx:for="{{dataList.list}}" wx:key="key">
+				<view class="no">{{index+1}}</view>
+				<view class="header">
+					<view class="left text-cut text-s text-grey">
+						<view class="left text-cut"><text wx:if="{{item.INFO_ORDER==0}}" class="text-black margin-right-xxs" style="font-weight:normal;font-size:24rpx">[置顶]</text><text wx:if="{{item.INFO_VOUCH==1}}" class="text-black margin-right-xxs" style="font-weight:normal;font-size:24rpx">[首页推荐]</text> </view>
+					</view>
+					<view class="right">
+						<text wx:if="{{item.INFO_STATUS==1}}" class="text-green">「正常」</text>
+						<text wx:elif="{{item.INFO_STATUS==0}}" class="text-red">「停止」</text>
+					</view>
+				</view>
+
+				<view class="info">
+					<view wx:if="{{cateIdOptions.length>1}}" class="info-item">
+						<view class="title">分类</view>
+						<view class="mao">：</view>
+						<view class="content">『{{item.INFO_CATE_NAME}}』</view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">标题</view>
+						<view class="mao">：</view>
+						<view class="content text-grey">{{item.INFO_OBJ.title}}</view>
+					</view>
+
+					<view class="info-item" bindtap="url" data-url="../../user/detail/admin_user_detail?id={{item.INFO_USER_ID}}">
+						<view class="title">用户</view>
+						<view class="mao">：</view>
+						<view class="content text-grey">{{item.user.USER_NAME}} <text class="text-blue text-s">【用户资料】</text></view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">评论数</view>
+						<view class="mao">：</view>
+						<view class="content text-grey">{{item.INFO_COMMENT_CNT}}</view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">提交时间</view>
+						<view class="mao">：</view>
+						<view class="content text-grey">{{item.INFO_ADD_TIME}}</view>
+					</view>
+
+					<view class="oprt">
+
+
+						<view bindtap="bindStatusMoreTap" data-id="{{item._id}}" class="btn margin-right-s">状态管理</view>
+
+						<view data-idx="{{index}}" bindtap="bindMoreTap" data-id="{{item._id}}" data-idx="{{index}}" data-qr="{{item.INFO_QR}}" data-title="{{item.INFO_OBJ.title}}" class="btn margin-right-s">更多操作</view>
+
+						<view bindtap="url" data-url="../../../info/detail/info_detail?id={{item._id}}" class="btn margin-right-s">预览</view>
+
+
+
+					</view>
+				</view>
+			</view>
+
+		</view>
+		<!-- List END -->
+
+		<!--load begin-->
+		<import src="../../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{dataList,skin:'text-grey'}}" />
+		<!--load end-->
+
+
+	</cmpt-comm-list>
+
+
+</block>

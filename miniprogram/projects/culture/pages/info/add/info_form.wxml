@@ -1,0 +1,15 @@
+<view class="form-box shadow"> 
+
+    <view wx:if="{{cateIdOptions.length>1}}" class="form-group arrow" id="formCateId">
+        <view class="title must">分类</view>
+        <cmpt-picker id="cate-picker" sourceData="{{cateIdOptions}}" bind:select="url" data-type="picker" data-item="formCateId" item="{{formCateId}}"> </cmpt-picker>
+    </view>
+    <view wx:if="{{formCateIdFocus}}" class="hint-desc error">{{formCateIdFocus}}</view> 
+ 
+</view>
+
+
+<view class="form-box shadow-project card-project margin-top-xs">
+	<cmpt-form-show id="cmpt-form" mark="cmpt-form" isCacheMatch="{{false}}" fields="{{fields}}" forms="{{formForms}}" isDefMatch="{{isEdit?false:true}}">
+	</cmpt-form-show>
+</view>

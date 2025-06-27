@@ -1,0 +1,10 @@
+{
+	"usingComponents": { 
+		"cmpt-custom-nav": "/cmpts/public/custom_nav/custom_nav_cmpt",
+		"cmpt-detail": "/cmpts/biz/detail/detail_cmpt",
+		"cmpt-form-show": "/cmpts/public/form/form_show/form_show_cmpt"  
+	},
+	"navigationStyle": "custom",
+	"enablePullDownRefresh": true, 
+	"navigationBarTitleText": "游记"
+}

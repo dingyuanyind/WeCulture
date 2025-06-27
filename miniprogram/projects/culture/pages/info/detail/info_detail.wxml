@@ -1,0 +1,57 @@
+<cmpt-custom-nav url="../../default/index/default_index" style="position: fixed;top:0;width:100%;z-index: 999999999;"></cmpt-custom-nav>
+
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l load-project"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l load-project"></view>
+
+<block wx:if="{{isLoad}}">
+	<view class="main">
+
+		<view class="cover">
+			<image bind:tap="url" data-url="{{info.INFO_OBJ.cover[0]}}" data-type="img" src="{{info.INFO_OBJ.cover[0]}}" class="loading  shadow-project" show-menu-by-longpress="{{true}}" mode='widthFix' lazy-load="true"></image>
+			<view class="mark">
+				<text class="icon-attention margin-right-xxs"></text>{{info.INFO_VIEW_CNT}}
+				<text class="icon-comment margin-right-xxs"></text>{{info.INFO_COMMENT_CNT}}
+			</view>
+		</view>
+
+		<view class="title"><text class="icon-write text-project margin-right-xs"></text>{{info.INFO_OBJ.title}}</view>
+
+		<view class="author">
+			<view class="txt">
+				<image class="loading shadow-project" mode="aspectFill" lazy-load="{{true}}" src="{{info.user.USER_PIC}}" />
+				<text>{{info.user.USER_NAME}}</text>
+				<text class="icon-male text-blue margin-left-xxs" wx:if="{{info.user.USER_OBJ.sex=='男'}}"></text>
+				<text class="icon-female text-red margin-left-xxs" wx:if="{{info.user.USER_OBJ.sex=='女'}}"></text>
+				<text class="time">{{info.INFO_ADD_TIME}}</text>
+			</view>
+		</view>
+
+		<view class="detail article-box">
+			<view class="article">
+				<block wx:for="{{info.INFO_OBJ.desc}}" wx:key="key">
+					<view class="content" wx:if="{{item.type=='text'}}">
+						<text user-select="{{true}}">{{item.val}}</text>
+					</view>
+					<view class="pics" wx:if="{{item.type=='img'}}">
+						<image bindtap="url" data-type='img' data-url="{{item.val}}" show-menu-by-longpress="{{true}}" class="loading" mode='widthFix' lazy-load="true" src="{{item.val}}">
+						</image>
+					</view>
+				</block>
+			</view>
+
+		</view>
+
+
+	</view>
+
+	<view style="height:200rpx"></view>
+
+
+	<cmpt-detail mode="mode2" topBtnShow="{{topBtnShow}}" tag="" oid="{{info._id}}" cate="{{info.INFO_CATE_NAME}}" title="{{info.INFO_OBJ.title}}" cover="{{info.INFO_OBJ.cover[0]}}" qr="{{info.INFO_QR}}" desc="查看游记详情" bg="{{skin.PROJECT_COLOR}}">
+		<view class="bottom-line">
+			<view bindtap="url" data-url="../../comment/list/comment_list?id={{id}}&type=info" class="join comment   margin-right">评论 <text wx:if="{{info.INFO_COMMENT_CNT>0}}">({{info.INFO_COMMENT_CNT}})</text></view>
+
+		</view>
+	</cmpt-detail>
+
+</block>

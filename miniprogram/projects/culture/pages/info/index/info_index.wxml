@@ -1,0 +1,67 @@
+<view wx:if="{{!isLoad}}" class="margin-top load loading text-l load-project"></view>
+<block wx:if="{{isLoad}}">
+	<cmpt-comm-list _params="{{_params}}" type="info-list" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="info/list" isTotalMenu="{{true}}" sortMenusDefaultIndex="0" topBottom="120" placeholder="搜索" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd">
+
+		</view>
+
+		<!-- List Begin -->
+		<view class="content-list">
+			<view class="content-left">
+				<block wx:for="{{dataList.list}}" wx:key="list">
+					<template is='item-data' data='{{...item}}' wx:if="{{index % 2 ==0}}"></template>
+				</block>
+			</view>
+			<view class="content-right">
+				<block wx:for="{{dataList.list}}" wx:key="list">
+					<template is='item-data' data='{{...item}}' wx:if="{{index % 2 ==1}}"></template>
+				</block>
+			</view>
+		</view>
+
+		<!-- 定义模板 -->
+		<template name="item-data">
+			<view class="content-item shadow-project" bind:tap="url" data-url="../../info/detail/info_detail?id={{_id}}">
+
+				<!-- 重点是mode为widthFix -->
+				<view class="content-item-img">
+					<view class="mark">{{INFO_CATE_NAME}}</view>
+					<image src="{{INFO_OBJ.cover}}" class="content-item-img loading" lazy-load="{{true}}" mode="widthFix" />
+					<view class="view">
+						<text class="icon-attention margin-right-xxs"></text>{{INFO_VIEW_CNT}}
+						<text class="icon-comment margin-right-xxs"></text>{{INFO_COMMENT_CNT}}
+					</view>
+				</view>
+
+				<view class="content-item-box">
+					<view class="line1 content-cut-one">{{INFO_OBJ.title}}</view>
+					<view class="line2">
+						<image src="{{user.USER_PIC}}" mode="aspectFill" lazy-load="{{true}}" class="avatar loading" />
+						<view class="name text-cut">{{user.USER_NAME}}</view>
+					</view>
+				</view>
+			</view>
+		</template>
+		<!--游记END-->
+		<!-- List END -->
+
+		<!--load begin-->
+		<import src="../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{skin:'load-project',dataList}}" />
+		<!--load end-->
+
+	</cmpt-comm-list>
+
+
+	<view class="post safe-bottom">
+		<button capture-bind:tap="url" data-url="../add/info_add" class="btn-base btn-project"><text class="icon-add margin-right-xs"></text>写游记</button>
+	</view>
+
+
+	<block wx:if="{{skin.IS_SUB}}">
+		<import src="../../tpls/menu_tpl.wxml" />
+		<template is="menuTpl" data="{{curMenu:'info_index',returnHome:false}}" />
+	</block>
+
+</block>

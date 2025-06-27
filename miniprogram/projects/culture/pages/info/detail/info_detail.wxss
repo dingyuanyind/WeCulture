@@ -1,0 +1,150 @@
+@import "../../../../../style/public/detail.wxss";
+@import "../../../style/skin.wxss";
+
+page {
+	background-color: var(--projectCompareColor) !important;
+}
+
+.main {
+	width: 100%;
+	padding: 0;
+	background-color: #fff;
+}
+
+.cover {
+	width: 100%;
+	position: relative;
+}
+
+.cover .mark {
+	position: absolute;
+	right: 10rpx;
+	bottom: 18rpx;
+	z-index: 9;
+	padding: 6rpx 20rpx;
+	color: #fff;
+	font-size: 22rpx;
+	border-radius: 28rpx;
+	background-color: var(--projectColor);
+	opacity: .8;
+}
+
+.cover>image {
+	width: 100%;
+	border-bottom-left-radius: 70rpx;
+	box-shadow: -3px -4px 50px 0px rgba(100, 100, 111, 0.2);
+}
+
+.title {
+	width: 100%;
+	font-size: 34rpx;
+	font-weight: bold;
+	padding: 30rpx 30rpx;
+	text-align: left;
+	border-bottom: 2rpx dashed var(--projectColorLight)
+}
+
+.author {
+	width: 100%;
+	display: flex;
+	color: #666;
+	padding: 20rpx 40rpx;
+}
+
+
+.author .txt {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 26rpx;
+}
+
+.author .txt>image {
+	width: 70rpx;
+	height: 70rpx;
+	border-radius: 50%;
+	margin-right: 10rpx;
+}
+
+.author .txt .time {
+	font-size: 24rpx;
+	color: #999;
+	margin-left: 20rpx;
+	font-weight: normal;
+}
+
+.detail {
+	width: 100%;
+	padding: 0rpx 0rpx;
+	overflow: hidden;
+	transform: translateY(0);
+	display: flex;
+	flex-direction: column;
+	border-radius: 0 !important;
+}
+
+.article-box .article {
+	border-top: 2rpx dotted var(--projectColorLight);
+	background-color: var(--projectCompareColor) !important;
+	padding: 36rpx 26rpx 100rpx;
+	border-top-left-radius: 40rpx;
+	border-top-right-radius: 40rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	margin-top: 30rpx;
+}
+
+.article-box .article .content {
+	font-size: 26rpx;
+}
+
+
+
+/*底部*/
+.bottom-line {
+	height: 140rpx;
+	background-color: #fff;
+	border-radius: 60rpx;
+	display: flex;
+	align-content: space-between;
+	align-items: center;
+	padding: 0 20rpx;
+}
+
+.bottom-line .join {
+	padding: 20rpx 30rpx;
+	background-color: var(--projectColor);
+	width: 200rpx;
+	border-radius: 20rpx;
+	color: #fff;
+	text-align: center;
+	font-size: 28rpx;
+	border: 2rpx solid var(--projectColor)
+}
+
+.bottom-line .join.bg-grey {
+	border: 2rpx solid var(--greyLight)
+}
+
+.bottom-line .join.comment {
+	background-color: #fff;
+	color: var(--red);
+	border: 2rpx solid var(--red)
+}
+
+.bottom-line .join.bg-grey {
+	box-shadow: unset;
+}
+
+.cmpt-biz-detail-mode2 .inner .slot-inner {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.cmpt-biz-detail-mode2 .inner {
+	padding: 0 !important;
+}

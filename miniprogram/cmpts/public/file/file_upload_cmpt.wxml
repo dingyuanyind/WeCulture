@@ -1,0 +1,27 @@
+<view class="form-group">
+	<view class="title"><text wx:if="{{must}}" class="text-red">*</text>{{title}} <text wx:if="{{isShowSize}}" class="text-gray" style="font-size: 24rpx;font-weight: normal;">(每个不超过{{uploadSize}}M)</text>
+	</view>
+	<view class="action" wx:if="{{isShowSize&&fileMax>1}}">
+		{{fileList.length}}/{{fileMax}}
+	</view>
+</view>
+
+<view bindtap="bindChooseFileTap" class="upload-img">
+	<view class="inner"><text class="icon-file margin-right-xs"></text>请选择文件...</view> 
+</view>
+
+
+<view class="file-box">
+	<view class="item" wx:for="{{fileList}}" wx:key="k">
+		<view class="left" bind:tap="bindOpenTap" data-idx="{{index}}">
+			<image class="img" src="images/{{item.ext}}.png"></image>
+			<view class="title">{{item.name}} </view>
+		</view>
+		<view class="right">
+			<view class="oprt" bind:tap="catchDelTap" data-idx="{{index}}"><text class="oprt-btn icon-delete bg-red light margin-right-xs"></text></view>
+			<view class="oprt" bind:tap="catchEditTap" data-idx="{{index}}"><text class="oprt-btn icon-edit bg-blue light"></text></view>
+		</view>
+	</view>
+</view>
+
+ 
